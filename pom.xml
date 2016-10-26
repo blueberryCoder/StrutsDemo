@@ -13,6 +13,7 @@
         <module>StrutsAnnotation</module>
         <module>StrutsActionError</module>
         <module>StrutsModelDrive</module>
+        <module>StrutsInterceptor</module>
     </modules>
     <dependencies>
         <dependency>

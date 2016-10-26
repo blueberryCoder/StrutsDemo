@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Sofware Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd"
+        >
+<struts>
+    <constant name="struts.devMode" value="true"></constant>
+  <package name="default" namespace="/" extends="struts-default">
+      <action name="Test" class="com.blueberry.actions.TestAction">
+          <interceptor-ref name="logger"></interceptor-ref>
+          <interceptor-ref name="timer"></interceptor-ref>
+          <interceptor-ref name="defaultStack"></interceptor-ref>
+          <result>
+            /result.jsp
+          </result>
+      </action>
+
+      <action name="longProcess" class="com.blueberry.actions.LongProcessAction">
+          <interceptor-ref name="execAndWait">
+              <param name="delay">1000</param>
+              <param name="delaySleepInterval">500</param>
+          </interceptor-ref>
+          <result name="wait">/wait.jsp</result>
+          <result name="success">/success.jsp</result>
+      </action>
+  </package>
+</struts>
