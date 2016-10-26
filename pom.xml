@@ -12,6 +12,7 @@
         <module>FirstStruts</module>
         <module>StrutsAnnotation</module>
         <module>StrutsActionError</module>
+        <module>StrutsModelDrive</module>
     </modules>
     <dependencies>
         <dependency>
