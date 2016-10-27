@@ -15,6 +15,7 @@
         <module>StrutsModelDrive</module>
         <module>StrutsInterceptor</module>
         <module>StrutsUpload</module>
+        <module>StrutsResources</module>
     </modules>
     <dependencies>
         <dependency>
