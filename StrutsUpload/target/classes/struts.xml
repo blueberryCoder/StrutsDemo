@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Sofware Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd"
+        >
+<struts>
+    <package name="upload" namespace="/" extends="struts-default">
+        <action name="fileUploadAction" class="com.blueberry.actions.FileUploadAction">
+            <result name="none">
+                /fileupload.jsp
+            </result>
+            <result name="success">
+                /fileupload.jsp
+            </result>
+        </action>
+        
+        <action name="resultAction" class="com.blueberry.actions.FileUploadAction">
+            
+            <interceptor-ref name="exception"></interceptor-ref>
+            <interceptor-ref name="i18n"></interceptor-ref>
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">image/*</param>
+                <param name="maximumSize">1024000</param>
+            </interceptor-ref>
+            <interceptor-ref name="params">
+                <param name="excludeParams">dojo\..*,^struts\..*</param>
+            </interceptor-ref>
+            <interceptor-ref name="validation">
+                <param name="excludeMethods">input,back,cancel,browser</param>
+            </interceptor-ref>
+            <interceptor-ref name="workflow">
+                <param name="excludeMethods">input,back,cancel,browser</param>
+            </interceptor-ref>
+
+            <result name="success">
+                /result.jsp
+            </result>
+            <result name="input">
+                /fileupload.jsp
+            </result>
+        </action>
+
+
+        <action name="multiUploadResult" class="com.blueberry.actions.MultipleFileUpload" method="upload">
+
+            <interceptor-ref name="exception"></interceptor-ref>
+            <interceptor-ref name="i18n"></interceptor-ref>
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">image/*</param>
+                <param name="maximumSize">102400000</param>
+            </interceptor-ref>
+            <interceptor-ref name="params">
+                <param name="excludeParams">dojo\..*,^struts\..*</param>
+            </interceptor-ref>
+            <interceptor-ref name="validation">
+                <param name="excludeMethods">input,back,cancel,browser</param>
+            </interceptor-ref>
+            <interceptor-ref name="workflow">
+                <param name="excludeMethods">input,back,cancel,browser</param>
+            </interceptor-ref>
+
+            <result name="success" >
+                /multiResult.jsp
+            </result>
+
+        </action>
+    </package>
+</struts>
