@@ -1,7 +1,6 @@
 package com.blueberry.actions;
 
 import com.opensymphony.xwork2.ActionSupport;
-import org.omg.PortableInterceptor.SUCCESSFUL;
 
 import java.io.File;
 import java.util.ArrayList;

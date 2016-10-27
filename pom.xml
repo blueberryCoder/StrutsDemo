@@ -14,6 +14,7 @@
         <module>StrutsActionError</module>
         <module>StrutsModelDrive</module>
         <module>StrutsInterceptor</module>
+        <module>StrutsUpload</module>
     </modules>
     <dependencies>
         <dependency>
